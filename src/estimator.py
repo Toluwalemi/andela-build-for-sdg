@@ -1,2 +1,2 @@
 def estimator(data):
-  return data
+    return data
