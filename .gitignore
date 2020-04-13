@@ -21,4 +21,6 @@ src/__pycache__
 # when you use pytest editable
 covid19_estimator_py.egg-info/
 
-.idea/ #added by me
+ #added by me
+.idea/
+package-lock.json
