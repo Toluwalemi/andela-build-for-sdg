@@ -11,17 +11,17 @@ def estimator(data):
     available_beds = 0.35 * total_hospital_beds
 
     # function to calculate number of days
-    def number_of_days(days, calc_period_type=period_type, calc_time_to_elapse=time_to_elapse):
-        if calc_period_type == 'days':
+    def number_of_days(period_type, time_to_elapse):
+        if period_type == 'days':
             days = time_to_elapse
-        elif calc_period_type == 'weeks':
+        elif period_type == 'weeks':
             days = time_to_elapse * 7
-        elif calc_period_type == 'months':
-            days = calc_time_to_elapse * 30
+        elif period_type == 'months':
+            days = time_to_elapse * 30
         return days
 
     def severe_positive_cases(case):
-        days = number_of_days(calc_period_type=period_type, calc_time_to_elapse=time_to_elapse) // 3
+        days = number_of_days(period_type, time_to_elapse) // 3
         return case * (2 ** days)
 
     def severe_cases_req_time(case):
