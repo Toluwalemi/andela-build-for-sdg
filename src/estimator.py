@@ -11,7 +11,7 @@ def estimator(data):
     available_beds = 0.35 * total_hospital_beds
 
     # function to calculate number of days
-    def number_of_days(days, calc_period_type=period_type, calc_time_to_elapse=period_type):
+    def number_of_days(days, calc_period_type=period_type, calc_time_to_elapse=time_to_elapse):
         if calc_period_type == 'days':
             days = time_to_elapse
         elif calc_period_type == 'weeks':
@@ -30,7 +30,7 @@ def estimator(data):
     def hospital_beds_req_time(case):
         return int(available_beds - severe_cases_req_time(case))
 
-    # this functions esttimates how much money the economy is likely to lose
+    # this functions estimates how much money the economy is likely to lose
     def money_to_lose(case):
         func = severe_positive_cases(case)
         days = number_of_days(period_type, time_to_elapse)
